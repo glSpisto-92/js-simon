@@ -29,7 +29,7 @@ $(function(){
 
   var  inputUtente;
 
-// setto una funzione di timing dopo aver inserito i numeri
+// setto una funzione di timing di tot secondi dopo aver inserito i numeri
   setTimeout(function () {
 
     // creo un ciclo per far inserire all'utente 5 numeri
@@ -37,13 +37,13 @@ $(function(){
 
       inputUtente = parseInt(prompt('Inserisci 1 alla volta i 5 numeri'));
       numeriInput.push(inputUtente);
-      // if( numeriInput.includes(numeriRandom.length)){
-      //   console.log(numeriInput);
-      // }
-    }
+
+     }
+     // controllo se tra i numeri inseriti dall'utente ci siano i numeri random
     if(numeriInput.includes(numeriRandom)) {
+      // stampo i numeri indovinati
     console.log('Bravo! hai ricordato ' + numeriInput.length + ' numeri : ' + numeriInput);
     }
-  }, 2000);
+  }, 3000);
 
 });
