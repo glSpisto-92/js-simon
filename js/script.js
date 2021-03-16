@@ -32,18 +32,21 @@ $(function(){
 // setto una funzione di timing di tot secondi dopo aver inserito i numeri
   setTimeout(function () {
 
+
     // creo un ciclo per far inserire all'utente 5 numeri
-    while (numeriInput.length < 5){
+    var i = 0;
 
+    while (i < 5){
       inputUtente = parseInt(prompt('Inserisci 1 alla volta i 5 numeri'));
-      numeriInput.push(inputUtente);
 
+      // controllo se tra i numeri inseriti dall'utente ci siano i numeri random
+      if(numeriUtente.includes(inputUtente)) {
+        numeriInput.push(inputUtente);
+      }
+      i++;
      }
-     // controllo se tra i numeri inseriti dall'utente ci siano i numeri random
-    if(numeriInput.includes(numeriRandom)) {
-      // stampo i numeri indovinati
-    console.log('Bravo! hai ricordato ' + numeriInput.length + ' numeri : ' + numeriInput);
-    }
+
+     console.log('Hai ricordato ' + numeriInput.length + ' numeri : ' + numeriInput);
   }, 3000);
 
 });
